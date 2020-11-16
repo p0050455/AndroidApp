@@ -21,6 +21,21 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'test'
+            keyPassword '123456'
+            storeFile file('app.jks')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'test'
+            keyPassword '123456'
+            storeFile file('app.jks')
+            storePassword '123456'
+        }
+    }
+
 }
 
 dependencies {
