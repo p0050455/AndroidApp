@@ -39,3 +39,4 @@ jobs:
           sonar_server_url: $sonar_server_url
           sonar_login: $sonar_login
           sonar_sources: $sonar_sources
+
