@@ -57,6 +57,6 @@ jobs:
             -Dsonar.projectKey=android \
             -Dsonar.projectName=android \
             -Dsonar.language=java \
-            -Dsonar.sources=~/code/app/src \
+            -Dsonar.sources=/home/circleci/code/app/src \
             -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
             -Dsonar.projectVersion=1.0
