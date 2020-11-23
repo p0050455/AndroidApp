@@ -44,7 +44,7 @@ jobs:
       - save_cache:
                paths:
                  - /home/circleci/code/sonar-scanner-4.2.0.1873
-               key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+               key: jars-{{ checksum "sonar-scanner-cli-4.2.0.1873.zip" }}
       - run:
           name: Run Sonarscanner
           command: |
