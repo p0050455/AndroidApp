@@ -54,9 +54,9 @@ jobs:
             export SONAR_SCANNER_OPTS="-Xmx2048m"
             eval ./sonar-scanner-4.2.0.1873/bin/sonar-scanner -Dsonar.host.url=$SONAR_SERVER \
             -Dsonar.login=$SONAR_TOKEN \
-            sonar.projectKey=android \
-            sonar.projectName=android \
-            sonar.language=java \
-            sonar.sources=app/src \
-            sonar.java.binaries=app/build/intermediates/javac/release/classes \
-            sonar.projectVersion=1.0
+            -Dsonar.projectKey=android \
+            -Dsonar.projectName=android \
+            -Dsonar.language=java \
+            -Dsonar.sources=app/src \
+            -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
+            -Dsonar.projectVersion=1.0
