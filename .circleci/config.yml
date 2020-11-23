@@ -52,8 +52,8 @@ jobs:
           name: Run Sonarscanner
           command: |
             export SONAR_SCANNER_OPTS="-Xmx2048m"
-            eval ./sonar-scanner-4.2.0.1873/bin/sonar-scanner -Dsonar.host.url=$SONAR_SERVER \
-            -Dsonar.login=$SONAR_TOKEN \
+            eval ./sonar-scanner-4.2.0.1873/bin/sonar-scanner -Dsonar.host.url=http://bf7870fd1e66.ngrok.io \
+            -Dsonar.login=f8607bf1763bd417550e7bc42efa907833391ea2 \
             -Dsonar.projectKey=android \
             -Dsonar.projectName=android \
             -Dsonar.language=java \
