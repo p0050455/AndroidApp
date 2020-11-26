@@ -1,5 +1,6 @@
-version: 2
-
+version: 2.1
+orbs:
+  mattermost-notify: bulletlogic/mattermost-notify@0.0.4
 jobs:
   build:
     working_directory: ~/code
@@ -26,7 +27,7 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run Tests
+          name: Run Build
           command: ./gradlew build
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk
@@ -51,3 +52,4 @@ jobs:
             -Dsonar.sources=/home/circleci/code/app/src \
             -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
             -Dsonar.projectVersion=1.0
+      -
