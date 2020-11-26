@@ -1,6 +1,5 @@
-version: 2.1
-orbs:
-  mattermost-notify: bulletlogic/mattermost-notify@0.0.4
+version: 2
+
 jobs:
   build:
     working_directory: ~/code
@@ -52,4 +51,3 @@ jobs:
             -Dsonar.sources=/home/circleci/code/app/src \
             -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
             -Dsonar.projectVersion=1.0
-      -
