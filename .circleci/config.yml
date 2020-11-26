@@ -34,20 +34,20 @@ jobs:
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: app/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
-      - run:
-          name: Install Sonarqube scanner
-          command: |
-            wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873.zip
-            unzip sonar-scanner-cli-4.2.0.1873.zip
-      - run:
-          name: Run Sonarscanner
-          command: |
-            export SONAR_SCANNER_OPTS="-Xmx2048m"
-            eval ./sonar-scanner-4.2.0.1873/bin/sonar-scanner -Dsonar.host.url=http://bf7870fd1e66.ngrok.io \
-            -Dsonar.login=f8607bf1763bd417550e7bc42efa907833391ea2 \
-            -Dsonar.projectKey=android \
-            -Dsonar.projectName=android \
-            -Dsonar.language=java \
-            -Dsonar.sources=/home/circleci/code/app/src \
-            -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
-            -Dsonar.projectVersion=1.0
+#      - run:
+#          name: Install Sonarqube scanner
+#          command: |
+#            wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873.zip
+#            unzip sonar-scanner-cli-4.2.0.1873.zip
+#      - run:
+#          name: Run Sonarscanner
+#          command: |
+#            export SONAR_SCANNER_OPTS="-Xmx2048m"
+#            eval ./sonar-scanner-4.2.0.1873/bin/sonar-scanner -Dsonar.host.url=http://bf7870fd1e66.ngrok.io \
+#            -Dsonar.login=f8607bf1763bd417550e7bc42efa907833391ea2 \
+#            -Dsonar.projectKey=android \
+#            -Dsonar.projectName=android \
+#            -Dsonar.language=java \
+#            -Dsonar.sources=/home/circleci/code/app/src \
+#            -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
+#            -Dsonar.projectVersion=1.0
