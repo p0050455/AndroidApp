@@ -13,8 +13,6 @@ jobs:
       ANDROID_SDK_ROOT: /usr/local/android-sdk-linux
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       #      - run:
