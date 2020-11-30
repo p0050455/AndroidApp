@@ -51,3 +51,14 @@ jobs:
 #            -Dsonar.sources=/home/circleci/code/app/src \
 #            -Dsonar.java.binaries=app/build/intermediates/javac/release/classes \
 #            -Dsonar.projectVersion=1.0
+      - run:
+          name: Install Firebase
+          command: curl -sL https://firebase.tools | bash
+      - run:
+          name: Send apk to testers
+          command: |
+            firebase appdistribution:distribute ./app/build/outputs/apk/debug/app-debug.apk  \
+                --app 1:32802418876:android:debacf185b107572c220b9  \
+                --release-notes "CICD deployment" \
+                --testers-file testers.txt \
+                --token 1//0eduFSZXCqffACgYIARAAGA4SNwF-L9IrrRoBjm0UMhy8R8OILPZRnDiZtTp2gakoCUECU3fs3oXpjuXAjVLCRLw9PL6dqnIivNo
